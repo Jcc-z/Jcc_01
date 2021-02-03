@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.min.js"></script>
+	</head>
+	<body>
+		<div id="div1">
+			<!-- 
+				@keydown()方法控制键盘录入
+				$event:键盘输入参数对象
+			 -->
+			<input type="text" @keydown="keydown($event)" placeholder="请输入数字" />
+		</div>
+	</body>
+	<script>
+		/* 声明vue */
+		var vue = new Vue({
+			/* 选中操作区域 */
+			el:'#div1',
+			data:{},
+			methods:{
+				keydown(event){
+					/* 控制只能输入0-9的数字 */
+					var keyCode = event.keyCode;
+					// alert(keyCode);
+					if(!(keyCode>=48&&keyCode<=57)){
+						/* 使键盘输入对象不再接收参数，即阻止输入 */
+						event.preventDefault();
+					}
+				}
+			}
+		});
+		
+		
+	</script>
+</html>

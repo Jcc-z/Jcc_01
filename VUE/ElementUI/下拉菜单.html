@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>下拉菜单</title>
+		<!-- 引入ElementUI样式 -->
+		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<!-- 引入ElementUI组件库 -->
+		<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+		<style>
+		  .el-dropdown-link {
+		    cursor: pointer;
+		    color: #409EFF;
+		  }
+		  .el-icon-arrow-down {
+		    font-size: 12px;
+		  }
+		  .demonstration {
+		    display: block;
+		    color: #8492a6;
+		    font-size: 14px;
+		    margin-bottom: 20px;
+		  }
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<el-row class="block-col-2">
+			  <el-col :span="12">
+			    <span class="demonstration">hover 激活</span>
+			    <el-dropdown>
+			      <span class="el-dropdown-link">
+			        下拉菜单<i class="el-icon-arrow-down el-icon--right"></i>
+			      </span>
+			      <el-dropdown-menu slot="dropdown">
+			        <el-dropdown-item icon="el-icon-plus">黄金糕</el-dropdown-item>
+			        <el-dropdown-item icon="el-icon-circle-plus">狮子头</el-dropdown-item>
+			        <el-dropdown-item icon="el-icon-circle-plus-outline">螺蛳粉</el-dropdown-item>
+			        <el-dropdown-item icon="el-icon-check">双皮奶</el-dropdown-item>
+			        <el-dropdown-item icon="el-icon-circle-check">蚵仔煎</el-dropdown-item>
+			      </el-dropdown-menu>
+			    </el-dropdown>
+			  </el-col>
+			  <el-col :span="12">
+			    <span class="demonstration">click 激活</span>
+			    <el-dropdown trigger="click">
+			      <span class="el-dropdown-link">
+			        下拉菜单<i class="el-icon-arrow-down el-icon--right"></i>
+			      </span>
+			      <el-dropdown-menu slot="dropdown">
+			        <el-dropdown-item icon="el-icon-plus">黄金糕</el-dropdown-item>
+			        <el-dropdown-item icon="el-icon-circle-plus">狮子头</el-dropdown-item>
+			        <el-dropdown-item icon="el-icon-circle-plus-outline">螺蛳粉</el-dropdown-item>
+					<!-- disabled属性控制不可选 -->
+			        <el-dropdown-item icon="el-icon-check" disabled>双皮奶</el-dropdown-item>
+					<!-- divided属性控制水平线 -->
+			        <el-dropdown-item icon="el-icon-circle-check" divided>蚵仔煎</el-dropdown-item>
+			      </el-dropdown-menu>
+			    </el-dropdown>
+			  </el-col>
+			</el-row>
+		</div>
+	</body>
+	<!-- 因为布局是基于vue的 ，所以得先使用vue选中控制区域 -->
+	<script>
+		new Vue({
+			el:'#app'
+		});
+	</script>
+</html>

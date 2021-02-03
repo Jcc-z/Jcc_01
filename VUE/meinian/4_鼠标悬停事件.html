@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>@mouseOver事件</title>
+		<script src="js/vue.min.js"></script>
+		<style>
+			.father {
+				width: 500px;
+				height: 500px;
+				background: red;
+			}
+
+			.son {
+				width: 300px;
+				height: 300px;
+				background: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 鼠标悬停事件@mouseover -->
+		<div id="app">
+			<div class="father" @mouseover="alert('father')">
+				<!--<div class="son" @mouseover.stop="alert('son')"></div>-->
+				<!-- 
+					因为子容器在父容器中，所以进入子容器也必定进入父容器，就会先弹出子容器，再弹出父容器。
+					加上stop可以阻止后续的方法
+				 -->
+				<div class="son" @mouseover.stop="alert('son')"></div>
+			</div>
+		</div>
+	</body>
+	<script>
+		/* 因为div中的鼠标悬停方法是vue事件，所以需要选中vue控制区域 */
+		var vue = new Vue({
+			/* 如果不选中vue控制区域，vue的方法不会调用 */
+			el:'#app'
+		});
+	</script>
+</html>

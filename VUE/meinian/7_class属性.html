@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>class属性</title>
+		<script src="js/vue.min.js"></script>
+		<style>
+			.red {
+				color: red;
+			}
+
+			.big {
+				font-size: 30px;
+			}
+		</style>
+	</head>
+	<!-- 
+		绑定class属性实现动态调用：v-bind: 绑定属性 
+	-->
+	<body>
+		<div id="app">
+			<p>尚硅谷</p>
+			<!-- 传统形式添加类名，添加css样式 -->
+			<p class="red big">尚硅谷</p>
+			<!-- 使用vue动态调用样式 -->
+			<p :class="{red:isRed,big:isBig}">尚硅谷</p>
+			<!-- 在数组中使用三元表达式 -->
+			<p :class="[ok?'red':'','big']">尚硅谷</p>
+			<!-- 直接传递一个数组，注意： 这里的 class 需要使用  v-bind 做数据绑定 -->
+			<p :class="[showred,'big']">尚硅谷</p>
+			<a :href="url">尚硅谷</a>
+		</div>
+	</body>
+	<script>
+		var vm = new Vue({
+			el: "#app",
+			data: {
+				isRed: true,
+				isBig: true,
+				ok: true,
+				showred: 'red',
+				url: "http://www.atguigu.com"
+			}
+
+		})
+	</script>
+
+</html>

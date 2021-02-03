@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>v-on:click 单击事件</title>
+		<script src="js/vue.min.js"></script>
+	</head>
+	<!-- 
+		为按钮添加单击事件，有两种方式：
+		1、v-on:click"clicks()"   通过v-on绑定事件，参数为调用的方法，方法需要自己后续声明
+		2、v-on:click()  等同于@click()
+	 -->
+	<body>
+		<div id="div1">
+			<!-- <button v-on:click="clicks(' Hello')">v-on:click事件</button> -->
+			<button @click="clicks(' Hello')">v-on:click事件</button>
+		</div>
+	</body>
+	<script>
+		<!-- 1、声明vue -->
+		var vue = new Vue({
+			<!-- 2、选中控制区域 -->
+			el: '#div1',
+			<!-- data用于存放模型数据，变量赋值放在data中 -->
+			data: {
+
+			},
+			<!-- methods用于存放方法，声明的方法放在中间 -->
+			methods: {
+				clicks(content) {
+					alert(content);
+				}
+			}
+		});
+	</script>
+</html>

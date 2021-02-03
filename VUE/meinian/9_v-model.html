@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>v-model</title>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<!-- v-model会双向绑定，一方的改变都会引起另一方的改变 -->
+			<input type="text" v-model="username" />{{username}}
+		</div>
+	</body>
+	<script>
+		new Vue({
+			el:'#app',
+			data:{
+				username:''
+			}
+		});
+	</script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>插值表达式</title>
+		<script src="js/vue.min.js"></script>
+	</head>
+	<body>
+		<div id="div1">
+			{{value1}}<br />
+			{{value2}}<br />
+			{{value3>4?'Yes':'no'}}<br />
+			{{value3+2}}
+		</div>
+	</body>
+	<script>
+		/* 
+			Vue的使用步骤，类似于JQuery和Json
+			1、声明(先导入vue的js库)
+		 */
+		var vue = new Vue({
+			/* 
+				2、选定控件，相当于获取选定区域的所有内容
+					所以选定控件就是获取指定区域的dom对象
+			 */
+			el: '#div1',
+			/* 
+				data用来存储页面模型数据
+			 */
+			data: {
+				/*
+					Json中通过{}来存储变量，Vue类似，不同变量之间用逗号隔开
+					变量使用 : 赋值
+				 */
+				value1: 'Hello Vue',
+				value2: 'Bye Vue',
+				value3: 5
+			}
+
+		});
+	</script>
+</html>

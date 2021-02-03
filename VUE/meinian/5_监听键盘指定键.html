@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>按下回车键提交表单</title>
+		<script src="js/vue.min.js"></script>
+		<!-- 
+			@keydown.enter可以监听回车键的按下，可以实现回车键实现指定函数
+			就可以实现网页上回车完成输入的功能
+		 -->
+	</head>
+	<body>
+		<div id="app">
+			<input @keydown.enter="enter()" />
+		</div>
+	</body>
+	<script>
+		/* 声明vue */
+		var vue = new Vue({
+			/* 选择控制区域 */
+			el:'#app',
+			data:{},
+			methods:{
+				enter(){
+					/* 添加回车键方法，后期可用于回车完成登录等操作 */
+					alert('yes');
+				}
+			}
+		});
+	</script>
+</html>

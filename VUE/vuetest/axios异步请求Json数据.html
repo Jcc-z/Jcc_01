@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.min.js"></script>
+		<script src="js/axios.min.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<button @click="getJson">异步请求数据</button>
+		</div>
+	</body>
+	<script>
+		var vue = new Vue({
+			el: '#app',
+			data: {},
+			methods: {
+				getJson() {
+					axios.get("./data/user.json").then((res) => {
+						alert(res.data[0].username);
+					})
+				}
+			}
+		});
+	</script>
+</html>
